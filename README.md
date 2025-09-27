@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🎬 Movie Recommendation App
 
-## Getting Started
+A responsive and interactive movie recommendation web application built with Next.js 13 (App Router), TypeScript, and Styled Components.
+The app fetches trending and recommended movies from The Movie Database (TMDB) API, supports dynamic routing for detailed movie pages, and allows users to save favorite movies locally.
 
-First, run the development server:
+🚀 Features
 
-```bash
-npm run dev
+Dynamic Routing — Detailed movie pages using Next.js [id] routes.
+
+User Personalization — Save favorite movies with Local Storage or API backend.
+
+Interactive Dashboard — Browse trending and recommended movies with a responsive UI.
+
+API Integration — Fetch movie data from TMDB API with error handling and loading states.
+
+Responsive UI — Optimized for desktop and mobile, with hover effects and animations.
+
+🛠️ Tech Stack
+
+Framework: Next.js 13 / React
+
+Language: TypeScript
+
+Styling: Styled Components
+
+Deployment: Netlify (recommended) or Vercel
+
+⚙️ Setup Instructions
+
+1. Clone the repository
+   git clone https://github.com/D-imani/cinmeatch.git
+   cd cinmeatch
+
+2. Install dependencies
+   npm install
+
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+yarn install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses the TMDB API.
+Create a .env.local file in the root of your project:
 
-## Learn More
+NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
 
-To learn more about Next.js, take a look at the following resources:
+🔑 You can get a free API key from TMDB
+.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Run the project locally
+   npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+App runs at: http://localhost:3000
 
-## Deploy on Vercel
+🌐 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is configured for Netlify.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add environment variables in Netlify
+
+Go to your Netlify Dashboard → select your site.
+
+Navigate to Site Settings → Build & Deploy → Environment Variables.
+
+Add:
+
+Key: NEXT_PUBLIC_TMDB_API_KEY
+
+Value: your TMDB key
+
+Save and redeploy your site.
+
+Redeploy
+
+From Deploys → click Trigger deploy → Clear cache and deploy site.
+
+Or push a commit to rebuild.
+
+📝 Commit Workflow
+
+This project follows Conventional Commits
+:
+
+feat: — New features
+
+fix: — Bug fixes
+
+style: — UI/Styling changes
+
+docs: — Documentation updates
+
+chore: — Build/tooling changes
+
+Example:
+
+feat: add dynamic routing for movie detail pages
+docs: add API setup and usage instructions
+
+✅ Evaluation Criteria
+
+Functionality
+
+Fetches & displays trending/recommended movies
+
+Dynamic movie detail pages
+
+Save favorites locally
+
+Code Quality
+
+TypeScript types (no any)
+
+Reusable components
+
+Clean structure
+
+User Experience
+
+Responsive design
+
+Smooth navigation and animations
+
+Easy favorites management
+
+Version Control
+
+Regular commits with descriptive messages
+
+Clean repo structure
+
+📸 Screenshots
+
+(Add screenshots of your dashboard and movie detail page here once deployed)
+
+🔮 Future Improvements
+
+User authentication (save favorites via backend API)
+
+Advanced recommendation engine
+
+Dark/Light mode toggle
