@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import MovieCard from "@/components/MovieCard";
+import { Movie } from "@/types/movie";
 
 export default function FavoritesPage() {
-  const [favorites, setFavorites] = useState<any[]>([]);
+  const [favorites, setFavorites] = useState<Movie[]>([]);
 
   useEffect(() => {
     const stored = localStorage.getItem("favorites");
     if (stored) {
-      setFavorites(JSON.parse(stored));
+      setFavorites(JSON.parse(stored) as Movie[]);
     }
   }, []);
 

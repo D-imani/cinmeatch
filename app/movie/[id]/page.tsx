@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import { Movie } from "@/types/movie";
 
 export default function MovieDetailPage() {
   const { id } = useParams(); // 👈 works only in client components
-  const [movie, setMovie] = useState<any>(null);
+  const [movie, setMovie] = useState<Movie | null>(null);
 
   useEffect(() => {
     if (!id) return;
@@ -16,7 +17,7 @@ export default function MovieDetailPage() {
         const res = await fetch(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=en-US`
         );
-        const data = await res.json();
+        const data: Movie = await res.json();
         setMovie(data);
       } catch (error) {
         console.error("Error fetching movie:", error);
