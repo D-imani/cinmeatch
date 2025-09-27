@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "@/lib/api";
 import MovieCard from "@/components/MovieCard";
 import Navbar from "@/components/Navbar";
+import { Movie } from "@/types/movie";
 
 export default function Page() {
-  const [movies, setMovies] = useState<any[]>([]); // initialize as empty array
+  const [movies, setMovies] = useState<Movie[]>([]); // initialize as empty array
 
   useEffect(() => {
     async function loadMovies() {

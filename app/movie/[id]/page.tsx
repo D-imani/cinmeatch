@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 export default function MovieDetailPage() {
   const { id } = useParams(); // 👈 works only in client components
@@ -32,9 +33,11 @@ export default function MovieDetailPage() {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <div className="flex flex-col md:flex-row gap-6">
-        <img
+        <Image
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
+          width={300} // fixed width
+          height={450}
           className="rounded-lg w-full md:w-1/3"
         />
         <div className="flex-1">
