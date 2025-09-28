@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { fetchTrendingMovies } from "@/lib/api";
 import MovieCard from "@/components/MovieCard";
+import { Movie } from "@/types/movie";
 
 export default function HomePage() {
-  const [movies, setMovies] = useState<any[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
