@@ -13,7 +13,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
     const stored = localStorage.getItem("favorites");
     if (stored) {
       const favorites = JSON.parse(stored);
-      setIsFavorite(favorites.some((fav: any) => fav.id === movie.id));
+      setIsFavorite(favorites.some((fav: Movie) => fav.id === movie.id));
     }
   }, [movie.id]);
 
@@ -22,7 +22,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
     let favorites = stored ? JSON.parse(stored) : [];
 
     if (isFavorite) {
-      favorites = favorites.filter((fav: any) => fav.id !== movie.id);
+      favorites = favorites.filter((fav: Movie) => fav.id !== movie.id);
     } else {
       favorites.push(movie);
     }
